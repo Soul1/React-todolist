@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
-import TodoListHeader from './Components/TodoListHeader'
-import TodoListTasks from './Components/TodoListTasks'
-import TodoListFooter from './Components/TodoListFooter'
+import TodoListHeader from './Components/TodoListHeader';
+import TodoListTasks from './Components/TodoListTasks';
+import TodoListFooter from './Components/TodoListFooter';
+
 
 class App extends React.Component {
 
@@ -36,6 +37,7 @@ class App extends React.Component {
 
         return (
             <div className="App">
+
                 <div className="todoList">
                     <TodoListHeader onAddTaskClick={this.onAddTaskClick} refTitleTask={this.newTaskTitleRef}/>
                     <TodoListTasks tasks={this.state.tasks}/>
