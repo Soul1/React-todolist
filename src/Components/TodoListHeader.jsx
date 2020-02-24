@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 class TodoListHeader extends React.Component {
 
     onAddTaskClick = () => {
-        let newText = this.props.refTitleTask.current.value;
+        let newText = this.props.refTitleTask.current.value != ''?
+                      this.props.refTitleTask.current.value
+                      :'Нет заголовка';
         this.props.refTitleTask.current.value = '';
         this.props.addTask(newText)
     }
