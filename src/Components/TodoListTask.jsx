@@ -14,7 +14,7 @@ class TodoListTask extends React.Component {
                        type="checkbox"
                        checked={this.props.task.isDone}/>
 
-                <span>{this.props.task.title},
+                <span className={this.props.task.isDone ? 'taskCompleted' : ''}>{this.props.task.title},
                        priority: {this.props.task.priority}</span>
             </div>
         )
