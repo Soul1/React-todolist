@@ -7,18 +7,18 @@ const TodoListFooter = (props) => {
   let [toShow, setToShow] = useState(false);
 
   const onClickForShow = () => {
-    debugger
+
     setToShow(true)
   };
   const onClickForSide = () => {
-    debugger
+
     setToShow(false)
   };
 
   let classForAll = props.filterValue === 'All' ? 'filterActive' : '';
   let classForCompleted = props.filterValue === 'Completed' ? 'filterActive' : '';
   let classForActive = props.filterValue === 'Active' ? 'filterActive' : '';
-  debugger
+
   return (
     <div>
       <div className={toShow ? 'toShow' : 'toSide'}>
