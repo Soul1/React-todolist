@@ -4,27 +4,32 @@ import TodoListTitle from './TodoListTitle';
 import TodoListTasks from './TodoListTasks';
 import TodoListFooter from './TodoListFooter';
 import AddNewItemForm from "./AddNewItemForm";
+import {repository} from "./repository";
 
 
 class TodoList extends React.Component {
 
   saveState = () => {
-    let stateAsString = JSON.stringify(this.state)
-    localStorage.setItem('out-state-' + this.props.id, stateAsString)
+    repository.saveTasks(this.state, this.props.id)
   };
-
   restoreState = () => {
-    let state = {
-      tasks: [],
-      filterValue: 'All',
-      newTaskId: 0,
-    };
-    let stateAsString = localStorage.getItem('out-state-' + this.props.id);
-    if (stateAsString != null) {
-      state = JSON.parse(stateAsString)
-    }
+    let state = repository.getTasks(this.props.id);
     this.setState(state)
   };
+
+  // restoreState = () => {
+  //   repository.getTasks(this.props.id)
+  //   let state = {
+  //     tasks: [],
+  //     filterValue: 'All',
+  //     newTaskId: 0,
+  //   };
+  //   let stateAsString = localStorage.getItem('out-state-' + );
+  //   if (stateAsString != null) {
+  //     state = JSON.parse(stateAsString)
+  //   }
+  //   this.setState(state)
+  // };
   state = {
     tasks: [],
     filterValue: 'All',

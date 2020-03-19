@@ -2,24 +2,21 @@ import React from 'react';
 import './App.css'
 import TodoList from "./Components/TodoList";
 import AddNewItemForm from "./Components/AddNewItemForm";
+import {repository} from "./Components/repository";
 
 class App extends React.Component {
   saveState = () => {
-    let stateAsString = JSON.stringify(this.state);
-    localStorage.setItem('out-state-todolists', stateAsString)
+    repository.saveTodolists(this.state)
   };
-
-  restoreState = (state) => {
-
-    let stateAsString = localStorage.getItem('out-state-todolists');
-    if (stateAsString != null) {
-      state = JSON.parse(stateAsString)
+  restoreState = () => {
+    let todolists = repository.getTodolists();
+    if(todolists != null ){
+    this.setState(todolists)
     }
-    this.setState(state)
   };
 
   componentDidMount() {
-    this.restoreState(this.state)
+    this.restoreState()
   }
   state = {
     todolists: [],
