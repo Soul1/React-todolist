@@ -4,7 +4,8 @@ export const repository = {
   },
 
   getTodolists() {
-    let stateAsString = localStorage.getItem('todolists');
+    //this._get('todolists')
+    let stateAsString = localStorage.getItem('todolists' );
     if (stateAsString != null) {
       let state = JSON.parse(stateAsString);
       return state
@@ -12,12 +13,13 @@ export const repository = {
     return null
   },
 
-  saveTasks(tasks, id) {
-    this._save(tasks, 'out-state-' + id)
+  saveTasks(tasks, todolistsId) {
+    this._save(tasks, 'out-state-' + todolistsId)
   },
 
-  getTasks(id) {
-    let stateAsString = localStorage.getItem('out-state-' + id);
+  getTasks(todolistsId) {
+    // this._get('out-state-' + id)
+    let stateAsString = localStorage.getItem('out-state-' + todolistsId );
     if (stateAsString != null) {
       let state = JSON.parse(stateAsString);
       return state

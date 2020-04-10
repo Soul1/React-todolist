@@ -17,19 +17,6 @@ class TodoList extends React.Component {
     this.setState(state)
   };
 
-  // restoreState = () => {
-  //   repository.getTasks(this.props.id)
-  //   let state = {
-  //     tasks: [],
-  //     filterValue: 'All',
-  //     newTaskId: 0,
-  //   };
-  //   let stateAsString = localStorage.getItem('out-state-' + );
-  //   if (stateAsString != null) {
-  //     state = JSON.parse(stateAsString)
-  //   }
-  //   this.setState(state)
-  // };
   state = {
     tasks: [],
     filterValue: 'All',

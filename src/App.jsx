@@ -1,10 +1,9 @@
 import React from 'react';
-import './App.css'
-import TodoList from "./Components/TodoList";
-import AddNewItemForm from "./Components/AddNewItemForm";
-import {repository} from "./Components/repository";
+import TodoList from "./TodoList";
+import AddNewItemForm from "./AddNewItemForm";
+import {repository} from "./repository";
 
-class App extends React.Component {
+class MainTodoList extends React.Component {
   saveState = () => {
     repository.saveTodolists(this.state)
   };
@@ -37,7 +36,7 @@ class App extends React.Component {
   render = () => {
     const todolists = this.state
       .todolists
-      .map(tl => <TodoList id={tl.id} title={tl.title}/>);
+      .map(tl => <TodoList key={tl.id} id={tl.id} title={tl.title}/>);
     return (
       <>
         <div>
@@ -51,5 +50,5 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default MainTodoList;
 
