@@ -1,7 +1,8 @@
-.app-inner {
+.App {
   display: flex;
   flex-direction: row;
 }
+
 .todoList {
   width: 300px;
 }
@@ -10,22 +11,24 @@
   padding: 10px;
 }
 
-.filterActive{
-  background-color: #49daff;
+.todoList-task {
+
 }
 
-.errorInput{
-  border: 2px solid #f00;
+.todoList-task.done {
+  opacity: 0.5;
 }
 
-.taskCompleted{
-  color: #b7b7b7;
+.filter-active {
+  background-color: blue;
 }
 
-.toSide{
-  display: none;
+.error {
+  border-color: red;
 }
 
-.toShow {
-  display: block;
+.wrapper {
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
